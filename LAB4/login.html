@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 - 영화 정보 사이트</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-animation">
+          <h1>로그인 페이지</h1>
+        </div>
+      </header>
+      
+      <nav class="main-nav">
+        <div class="logo">인프밍 영화정보</div>
+        <ul class="nav-links">
+          <li><a href="index.html">메인</a></li>
+          <li><a href="signup.html">회원가입</a></li>
+          <li><a href="login.html">로그인</a></li>
+        </ul>
+      </nav>
+
+      <main>
+        <section class="form-section">
+          <h2>로그인</h2>
+          <form class="login-form" action="#" method="POST">
+            <div class="form-group">
+              <label for="email">이메일:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="example@email.com"
+                required
+                autocomplete="email"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="password">비밀번호:</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="비밀번호 입력"
+                required
+              />
+            </div>
+
+            <button type="submit" class="submit-btn">로그인</button>
+          </form>
+
+          <div class="form-footer">
+            <p>아직 계정이 없으신가요?</p>
+            <a href="signup.html" class="signup-link">회원가입 페이지로 이동</a>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 인프밍 영화정보 사이트. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>

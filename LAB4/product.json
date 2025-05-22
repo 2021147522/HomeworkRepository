@@ -1,0 +1,334 @@
+[
+  {
+    "title": "Minions",
+    "overview": "Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.",
+    "vote_average": 6.4,
+    "poster": "movie_posters/Minions.jpg",
+    "genre": [
+      "Family",
+      "Animation",
+      "Adventure",
+      "Comedy"
+    ]
+  },
+  {
+    "title": "Wonder Woman",
+    "overview": "An Amazon princess comes to the world of Man to become the greatest of the female superheroes.",
+    "vote_average": 7.2,
+    "poster": "movie_posters/Wonder Woman.jpg",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Fantasy"
+    ]
+  },
+  {
+    "title": "Beauty and the Beast",
+    "overview": "A live-action adaptation of Disney's version of the classic 'Beauty and the Beast' tale of a cursed prince and a beautiful young woman who helps him break the spell.",
+    "vote_average": 6.8,
+    "poster": "movie_posters/Beauty and the Beast.jpg",
+    "genre": [
+      "Family",
+      "Fantasy",
+      "Romance"
+    ]
+  },
+  {
+    "title": "Baby Driver",
+    "overview": "After being coerced into working for a crime boss, a young getaway driver finds himself taking part in a heist doomed to fail.",
+    "vote_average": 7.2,
+    "poster": "movie_posters/Baby Driver.jpg",
+    "genre": [
+      "Action",
+      "Crime"
+    ]
+  },
+  {
+    "title": "Big Hero 6",
+    "overview": "The special bond that develops between plus-sized inflatable robot Baymax, and prodigy Hiro Hamada, who team up with a group of friends to form a band of high-tech heroes.",
+    "vote_average": 7.8,
+    "poster": "movie_posters/Big Hero 6.jpg",
+    "genre": [
+      "Adventure",
+      "Family",
+      "Animation",
+      "Action",
+      "Comedy"
+    ]
+  },
+  {
+    "title": "Deadpool",
+    "overview": "Deadpool tells the origin story of former Special Forces operative turned mercenary Wade Wilson, who after being subjected to a rogue experiment that leaves him with accelerated healing powers, adopts the alter ego Deadpool. Armed with his new abilities and a dark, twisted sense of humor, Deadpool hunts down the man who nearly destroyed his life.",
+    "vote_average": 7.4,
+    "poster": "movie_posters/Deadpool.jpg",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Comedy"
+    ]
+  },
+  {
+    "title": "Guardians of the Galaxy Vol. 2",
+    "overview": "The Guardians must fight to keep their newfound family together as they unravel the mysteries of Peter Quill's true parentage.",
+    "vote_average": 7.6,
+    "poster": "movie_posters/Guardians of the Galaxy Vol_ 2.jpg",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Comedy",
+      "Science Fiction"
+    ]
+  },
+  {
+    "title": "Avatar",
+    "overview": "In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.",
+    "vote_average": 7.2,
+    "poster": "movie_posters/Avatar.jpg",
+    "genre": [
+      "Action",
+      "Adventure",
+      "Fantasy",
+      "Science Fiction"
+    ]
+  },
+  {
+    "title": "John Wick",
+    "overview": "Ex-lunatic John Wick comes off his meds to track down the bounders that killed his dog and made off with his self-respect",
+    "vote_average": 7.0,
+    "poster": "movie_posters/John Wick.jpg",
+    "genre": [
+      "Action",
+      "Thriller"
+    ]
+  },
+  {
+    "title": "Gone Girl",
+    "overview": "With his wife's disappearance having become the focus of an intense media circus, a man sees the spotlight turned on him when it's suspected that he may not be innocent.",
+    "vote_average": 7.9,
+    "poster": "movie_posters/Gone Girl.jpg",
+    "genre": [
+      "Mystery",
+      "Thriller",
+      "Drama"
+    ]
+  },
+  {
+    "title": "The Hunger Games: Mockingjay - Part 1",
+    "overview": "Katniss Everdeen reluctantly becomes the symbol of a mass rebellion against the autocratic Capitol.",
+    "vote_average": 6.6,
+    "poster": "movie_posters/The Hunger Games_ Mockingjay - Part 1.jpg",
+    "genre": [
+      "Science Fiction",
+      "Adventure",
+      "Thriller"
+    ]
+  },
+  {
+    "title": "War for the Planet of the Apes",
+    "overview": "Caesar and his apes are forced into a deadly conflict with an army of humans led by a ruthless Colonel. After the apes suffer unimaginable losses, Caesar wrestles with his darker instincts and begins his own mythic quest to avenge his kind. As the journey finally brings them face to face, Caesar and the Colonel are pitted against each other in an epic battle that will determine the fate of both their species and the future of the planet.",
+    "vote_average": 6.7,
+    "poster": "movie_posters/War for the Planet of the Apes.jpg",
+    "genre": [
+      "Drama",
+      "Science Fiction",
+      "War"
+    ]
+  },
+  {
+    "title": "Captain America: Civil War",
+    "overview": "Following the events of Age of Ultron, the collective governments of the world pass an act designed to regulate all superhuman activity. This polarizes opinion amongst the Avengers, causing two factions to side with Iron Man or Captain America, which causes an epic battle between former allies.",
+    "vote_average": 7.1,
+    "poster": "movie_posters/Captain America_ Civil War.jpg",
+    "genre": [
+      "Adventure",
+      "Action",
+      "Science Fiction"
+    ]
+  },
+  {
+    "title": "Pulp Fiction",
+    "overview": "A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.",
+    "vote_average": 8.3,
+    "poster": "movie_posters/Pulp Fiction.jpg",
+    "genre": [
+      "Thriller",
+      "Crime"
+    ]
+  },
+  {
+    "title": "Pirates of the Caribbean: Dead Men Tell No Tales",
+    "overview": "Thrust into an all-new paycheck, a down-on-his-luck Capt. Jack Sparrow feels the winds of ill-fortune blowing even more strongly when deadly ghost sailors led by his old nemesis, the evil Capt. Salazar, escape from the Devil's Triangle. Jack's only hope of a payout lies in seeking out the legendary Trident of Numbers, but to find it, he must forge an uneasy alliance with a reasonably intelligent and pretty astronomer and a irritating young man in the British navy.",
+    "vote_average": 6.6,
+    "poster": "movie_posters/Pirates of the Caribbean_ Dead Men Tell No Tales.jpg",
+    "genre": [
+      "Adventure",
+      "Action",
+      "Fantasy",
+      "Comedy"
+    ]
+  },
+  {
+    "title": "The Dark Knight",
+    "overview": "Batman raises the stakes in his war on crime. With the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets out to dismantle the remaining criminal organizations that plague the streets. The partnership proves to be effective, but they soon find themselves prey to a reign of chaos unleashed by a rising criminal mastermind known to the terrified citizens of Gotham as the Joker.",
+    "vote_average": 8.3,
+    "poster": "movie_posters/The Dark Knight.jpg",
+    "genre": [
+      "Drama",
+      "Action",
+      "Crime",
+      "Thriller"
+    ]
+  },
+  {
+    "title": "Blade Runner",
+    "overview": "In the smog-choked dystopian Los Angeles of 2019, blade runner Rick Deckard is called out of retirement to terminate a quartet of replicants who have escaped to Earth seeking their creator for a way to extend their short life spans.",
+    "vote_average": 7.9,
+    "poster": "movie_posters/Blade Runner.jpg",
+    "genre": [
+      "Science Fiction",
+      "Drama",
+      "Thriller"
+    ]
+  },
+  {
+    "title": "The Avengers",
+    "overview": "When an unexpected enemy emerges and threatens global safety and security, Nick Fury, director of the international peacekeeping agency known as S.H.I.E.L.D., finds himself in need of a team to pull the world back from the brink of disaster. Spanning the globe, a daring recruitment effort begins!",
+    "vote_average": 7.4,
+    "poster": "movie_posters/The Avengers.jpg",
+    "genre": [
+      "Science Fiction",
+      "Action",
+      "Adventure"
+    ]
+  },
+  {
+    "title": "Captain Underpants: The First Epic Movie",
+    "overview": "Two mischievous kids hypnotize their mean elementary school principal and turn him into their comic book creation, the kind-hearted and elastic-banded Captain Underpants.",
+    "vote_average": 6.5,
+    "poster": "movie_posters/Captain Underpants_ The First Epic Movie.jpg",
+    "genre": [
+      "Action",
+      "Animation",
+      "Comedy",
+      "Family"
+    ]
+  },
+  {
+    "title": "The Circle",
+    "overview": "A young tech worker takes a job at a greedy Internet corporation, quickly rises up the company's ranks, and soon finds herself in a perilous situation concerning privacy, surveillance and freedom. She comes to learn that her decisions and actions will have no effect whatsoever.",
+    "vote_average": 5.4,
+    "poster": "movie_posters/The Circle.jpg",
+    "genre": [
+      "Drama",
+      "Thriller",
+      "Science Fiction"
+    ]
+  },
+  {
+    "title": "The Bad Batch",
+    "overview": "In a desert wasteland in Texas, a muscled cannibal breaks one important rule: don’t play with your food.",
+    "vote_average": 5.3,
+    "poster": "movie_posters/The Bad Batch.jpg",
+    "genre": [
+      "Thriller",
+      "Romance",
+      "Science Fiction"
+    ]
+  },
+  {
+    "title": "The Maze Runner",
+    "overview": "Set in a post-apocalyptic world, young Thomas is deposited in a community of boys after his memory is erased, soon learning they're all trapped in a maze that will require him to join forces with fellow \"runners\" for a shot at escape.",
+    "vote_average": 7.0,
+    "poster": "movie_posters/The Maze Runner.jpg",
+    "genre": [
+      "Action",
+      "Mystery",
+      "Science Fiction",
+      "Thriller"
+    ]
+  },
+  {
+    "title": "Dawn of the Planet of the Apes",
+    "overview": "A group of scientists in San Francisco struggle to stay alive in the aftermath of a plague that is wiping out humanity, while Caesar tries to maintain dominance over his community of intelligent apes.",
+    "vote_average": 7.3,
+    "poster": "movie_posters/Dawn of the Planet of the Apes.jpg",
+    "genre": [
+      "Science Fiction",
+      "Action",
+      "Drama",
+      "Thriller"
+    ]
+  },
+  {
+    "title": "Alien: Covenant",
+    "overview": "Bound for a remote planet on the far side of the galaxy, the crew of the colony ship 'Covenant' discovers what is thought to be an uncharted paradise, but is actually a dark, dangerous world – which has its sole inhabitant the 'synthetic', David, survivor of the doomed Prometheus expedition.",
+    "vote_average": 5.7,
+    "poster": "movie_posters/Alien_ Covenant.jpg",
+    "genre": [
+      "Horror",
+      "Science Fiction",
+      "Thriller"
+    ]
+  },
+  {
+    "title": "Ghost in the Shell",
+    "overview": "In the near future, Major is the first of her kind: a human saved from a terrible crash, then cyber-enhanced to be a perfect soldier devoted to stopping the world's most dangerous criminals.",
+    "vote_average": 5.9,
+    "poster": "movie_posters/Ghost in the Shell.jpg",
+    "genre": [
+      "Action",
+      "Science Fiction",
+      "Thriller"
+    ]
+  },
+  {
+    "title": "Boyka: Undisputed IV",
+    "overview": "In the fourth installment of the fighting franchise, Boyka is shooting for the big leagues when an accidental death in the ring makes him question everything he stands for. When he finds out the wife of the man he accidentally killed is in trouble, Boyka offers to fight in a series of impossible battles to free her from a life of servitude",
+    "vote_average": 5.8,
+    "poster": "movie_posters/Boyka_ Undisputed IV.jpg",
+    "genre": [
+      "Thriller",
+      "Action",
+      "Crime"
+    ]
+  },
+  {
+    "title": "Whiplash",
+    "overview": "Under the direction of a ruthless instructor, a talented young drummer begins to pursue perfection at any cost, even his humanity.",
+    "vote_average": 8.3,
+    "poster": "movie_posters/Whiplash.jpg",
+    "genre": [
+      "Drama"
+    ]
+  },
+  {
+    "title": "Fight Club",
+    "overview": "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.",
+    "vote_average": 8.3,
+    "poster": "movie_posters/Fight Club.jpg",
+    "genre": [
+      "Drama"
+    ]
+  },
+  {
+    "title": "What Happened to Monday",
+    "overview": "In a world where families are limited to one child due to overpopulation, a set of identical septuplets must avoid being put to a long sleep by the government and dangerous infighting while investigating the disappearance of one of their own.",
+    "vote_average": 7.3,
+    "poster": "movie_posters/What Happened to Monday.jpg",
+    "genre": [
+      "Science Fiction",
+      "Thriller"
+    ]
+  },
+  {
+    "title": "Wish Upon",
+    "overview": "A teenage girl discovers a box with magical powers, but those powers comes with a deadly price.",
+    "vote_average": 5.3,
+    "poster": "movie_posters/Wish Upon.jpg",
+    "genre": [
+      "Fantasy",
+      "Horror",
+      "Thriller"
+    ]
+  }
+]
