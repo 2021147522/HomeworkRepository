@@ -1,0 +1,26 @@
+{
+  "name": "homeworkrepository",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2021147522/HomeworkRepository.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/2021147522/HomeworkRepository/issues"
+  },
+  "homepage": "https://github.com/2021147522/HomeworkRepository#readme",
+  "description": "",
+  "dependencies": {
+    "csv-parser": "^3.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "sqlite3": "^5.1.7"
+  }
+}

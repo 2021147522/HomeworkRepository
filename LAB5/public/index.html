@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>영화 정보 사이트</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-animation">
+          <h1>인프밍 영화정보 사이트에 오신 것을 환영합니다</h1>
+        </div>
+      </header>
+
+      <nav class="main-nav">
+        <div class="logo">인프밍 영화정보</div>
+        <ul class="nav-links">
+          <li><a href="index.html">메인</a></li>
+          <li><a href="signup.html">회원가입</a></li>
+          <li><a href="login.html">로그인</a></li>
+        </ul>
+      </nav>
+      <main>
+        <section class="movie-section">
+          <h2>영화 목록</h2>
+          <div
+            style="
+              margin-bottom: 16px;
+              display: flex;
+              gap: 12px;
+              align-items: center;
+            "
+          >
+            <input
+              id="search-input"
+              type="text"
+              placeholder="영화 제목/줄거리 검색"
+              style="padding: 6px; width: 200px"
+            />
+            <select id="sort-select" style="padding: 6px">
+              <option value="title-asc">제목 오름차순</option>
+              <option value="title-desc">제목 내림차순</option>
+              <option value="vote-asc">평점 오름차순</option>
+              <option value="vote-desc">평점 내림차순</option>
+            </select>
+          </div>
+          <div id="movie-list" class="movie-list-flex"></div>
+        </section>
+        <div
+          id="detail-area"
+          style="
+            margin: 32px 0 0 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            min-height: 40px;
+            display: none;
+          "
+        ></div>
+        <section class="about-section">
+          <h2>사이트 소개</h2>
+          <div class="about-content">
+            <p>
+              인프밍 영화정보 사이트는 다양한 장르의 영화 정보를 제공하는
+              웹사이트입니다. 회원가입을 통해 자신만의 영화 컬렉션을 만들고
+              관리할 수 있으며, 최신 영화 정보와 리뷰를 확인할 수 있습니다. 영화
+              팬들에게 유용한 정보와 소통의 장을 제공하는 것이 목표입니다.
+            </p>
+            <p>
+              저희 사이트는 지속적으로 업데이트되며, 사용자들의 피드백을
+              바탕으로 더 나은 서비스를 제공하기 위해 노력하고 있습니다.
+              회원가입 후 로그인하시면 더 다양한 기능을 이용하실 수 있습니다.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 인프밍 영화정보 사이트. All rights reserved.</p>
+      </footer>
+    </div>
+    <!-- 모달 영역 -->
+    <div
+      id="movie-modal"
+      style="
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+      "
+    ></div>
+    <script>
+      // 검색, 정렬 기능
+      let currentMovies = [];
+      const movieList = document.getElementById("movie-list");
+      const searchInput = document.getElementById("search-input");
+      const sortSelect = document.getElementById("sort-select");
+
+      // 영화 카드 생성 함수
+      function renderMovies(movies) {
+        movieList.innerHTML = ""; // 기존 목록 비우기
+
+        if (movies.length === 0) {
+          movieList.innerHTML =
+            '<p style="text-align: center; color: #666; padding: 40px;">검색 결과가 없습니다.</p>';
+          return;
+        }
+
+        movies.forEach((movie) => {
+          const card = document.createElement("a");
+          card.href = `/movies/${movie.id || movie.movie_id}`;
+          card.className = "movie-card";
+          card.innerHTML = `
+            <div class="movie-image-container">
+              <img src="${movie.poster || movie.movie_image}" alt="${
+            movie.title || movie.movie_title
+          }" class="movie-image" />
+              <div class="movie-overlay">
+                <p class="movie-title">${movie.title || movie.movie_title}</p>
+                <p class="movie-overview" style="display:none; margin-top:10px; color:#fff; font-size:0.95em;">${
+                  movie.overview || movie.movie_overview
+                }</p>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3>${movie.title || movie.movie_title}</h3>
+              <p>평점: ${movie.vote_average || movie.movie_rate}</p>
+            </div>
+          `;
+          // hover 시 overview 표시
+          const overlay = card.querySelector(".movie-overlay");
+          const overview = card.querySelector(".movie-overview");
+          overlay.addEventListener("mouseenter", () => {
+            overview.style.display = "block";
+          });
+          overlay.addEventListener("mouseleave", () => {
+            overview.style.display = "none";
+          });
+          movieList.appendChild(card);
+        });
+      }
+
+      // 서버에서 영화 데이터 가져오기
+      function fetchMovies(keyword = "") {
+        const url = keyword
+          ? `/api/movies?keyword=${encodeURIComponent(
+              keyword
+            )}&category=movie_title`
+          : "/movies";
+
+        fetch(url)
+          .then((res) => res.json())
+          .then((movies) => {
+            currentMovies = movies;
+            applySorting();
+          })
+          .catch((error) => {
+            console.error("영화 데이터 로드 실패:", error);
+            movieList.innerHTML =
+              '<p style="text-align: center; color: #ff0000; padding: 40px;">데이터를 불러오는데 실패했습니다.</p>';
+          });
+      }
+
+      // 정렬 적용
+      function applySorting() {
+        const sort = sortSelect.value;
+        const sortedMovies = [...currentMovies];
+
+        if (sort === "title-asc") {
+          sortedMovies.sort((a, b) =>
+            (a.title || a.movie_title).localeCompare(b.title || b.movie_title)
+          );
+        } else if (sort === "title-desc") {
+          sortedMovies.sort((a, b) =>
+            (b.title || b.movie_title).localeCompare(a.title || a.movie_title)
+          );
+        } else if (sort === "vote-asc") {
+          sortedMovies.sort(
+            (a, b) =>
+              (a.vote_average || a.movie_rate) -
+              (b.vote_average || b.movie_rate)
+          );
+        } else if (sort === "vote-desc") {
+          sortedMovies.sort(
+            (a, b) =>
+              (b.vote_average || b.movie_rate) -
+              (a.vote_average || a.movie_rate)
+          );
+        }
+
+        renderMovies(sortedMovies);
+      }
+
+      // 검색 디바운스 (300ms 후에 검색 실행)
+      let searchTimeout;
+      function handleSearch() {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          const keyword = searchInput.value.trim();
+          fetchMovies(keyword);
+        }, 300);
+      }
+
+      // 초기 데이터 로드
+      fetchMovies();
+
+      // 이벤트 바인딩
+      searchInput.addEventListener("input", handleSearch);
+      sortSelect.addEventListener("change", applySorting);
+    </script>
+  </body>
+</html>
