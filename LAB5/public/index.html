@@ -148,55 +148,61 @@
         });
       }
 
-      // 서버에서 영화 데이터 가져오기
-      function fetchMovies(keyword = "") {
-        const url = keyword
-          ? `/api/movies?keyword=${encodeURIComponent(
-              keyword
-            )}&category=movie_title`
-          : "/movies";
+      // 서버에서 영화 데이터 가져오기 (XMLHttpRequest 사용)
+      function fetchMovies(keyword = "", sort = "") {
+        const params = new URLSearchParams();
 
-        fetch(url)
-          .then((res) => res.json())
-          .then((movies) => {
-            currentMovies = movies;
-            applySorting();
-          })
-          .catch((error) => {
-            console.error("영화 데이터 로드 실패:", error);
-            movieList.innerHTML =
-              '<p style="text-align: center; color: #ff0000; padding: 40px;">데이터를 불러오는데 실패했습니다.</p>';
-          });
-      }
-
-      // 정렬 적용
-      function applySorting() {
-        const sort = sortSelect.value;
-        const sortedMovies = [...currentMovies];
-
-        if (sort === "title-asc") {
-          sortedMovies.sort((a, b) =>
-            (a.title || a.movie_title).localeCompare(b.title || b.movie_title)
-          );
-        } else if (sort === "title-desc") {
-          sortedMovies.sort((a, b) =>
-            (b.title || b.movie_title).localeCompare(a.title || a.movie_title)
-          );
-        } else if (sort === "vote-asc") {
-          sortedMovies.sort(
-            (a, b) =>
-              (a.vote_average || a.movie_rate) -
-              (b.vote_average || b.movie_rate)
-          );
-        } else if (sort === "vote-desc") {
-          sortedMovies.sort(
-            (a, b) =>
-              (b.vote_average || b.movie_rate) -
-              (a.vote_average || a.movie_rate)
-          );
+        if (keyword) {
+          params.append("keyword", keyword);
+          params.append("category", "movie_title");
         }
 
-        renderMovies(sortedMovies);
+        if (sort) {
+          params.append("sort", sort);
+        }
+
+        const url = params.toString()
+          ? `/api/movies?${params.toString()}`
+          : "/movies";
+
+        const xhr = new XMLHttpRequest();
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+              try {
+                const movies = JSON.parse(xhr.responseText);
+                currentMovies = movies;
+                renderMovies(movies);
+              } catch (parseError) {
+                console.error("JSON 파싱 실패:", parseError);
+                movieList.innerHTML =
+                  '<p style="text-align: center; color: #ff0000; padding: 40px;">데이터 처리에 실패했습니다.</p>';
+              }
+            } else {
+              console.error("HTTP 오류:", xhr.status, xhr.statusText);
+              movieList.innerHTML =
+                '<p style="text-align: center; color: #ff0000; padding: 40px;">데이터를 불러오는데 실패했습니다.</p>';
+            }
+          }
+        };
+
+        xhr.onerror = function () {
+          console.error("네트워크 오류 발생");
+          movieList.innerHTML =
+            '<p style="text-align: center; color: #ff0000; padding: 40px;">네트워크 오류가 발생했습니다.</p>';
+        };
+
+        xhr.open("GET", url, true);
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.send();
+      }
+
+      // 정렬 변경시 서버에서 다시 가져오기
+      function handleSortChange() {
+        const keyword = searchInput.value.trim();
+        const sort = sortSelect.value;
+        fetchMovies(keyword, sort);
       }
 
       // 검색 디바운스 (300ms 후에 검색 실행)
@@ -205,7 +211,8 @@
         clearTimeout(searchTimeout);
         searchTimeout = setTimeout(() => {
           const keyword = searchInput.value.trim();
-          fetchMovies(keyword);
+          const sort = sortSelect.value;
+          fetchMovies(keyword, sort);
         }, 300);
       }
 
@@ -214,7 +221,7 @@
 
       // 이벤트 바인딩
       searchInput.addEventListener("input", handleSearch);
-      sortSelect.addEventListener("change", applySorting);
+      sortSelect.addEventListener("change", handleSortChange);
     </script>
   </body>
 </html>

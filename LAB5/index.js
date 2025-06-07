@@ -25,6 +25,7 @@ app.use(express.json());
 app.get("/api/movies", (req, res) => {
   const keyword = req.query.keyword || "";
   const category = req.query.category || "movie_title";
+  const sort = req.query.sort || "";
 
   let sql = `SELECT * FROM movies`;
   const params = [];
@@ -33,6 +34,30 @@ app.get("/api/movies", (req, res) => {
     // 제목과 줄거리에서 동시에 검색
     sql += ` WHERE movie_title LIKE ? OR movie_overview LIKE ?`;
     params.push(`%${keyword}%`, `%${keyword}%`);
+  }
+
+  // 정렬 처리
+  if (sort) {
+    switch (sort) {
+      case "title-asc":
+        sql += ` ORDER BY movie_title ASC`;
+        break;
+      case "title-desc":
+        sql += ` ORDER BY movie_title DESC`;
+        break;
+      case "vote-asc":
+        sql += ` ORDER BY movie_rate ASC`;
+        break;
+      case "vote-desc":
+        sql += ` ORDER BY movie_rate DESC`;
+        break;
+      default:
+        // 기본 정렬 (ID 순)
+        sql += ` ORDER BY movie_id ASC`;
+    }
+  } else {
+    // 정렬 옵션이 없으면 기본적으로 ID 순
+    sql += ` ORDER BY movie_id ASC`;
   }
 
   db.all(sql, params, (err, movies) => {
@@ -115,6 +140,7 @@ app.get("/movies/:movie_id", (req, res) => {
       }" class="movie-detail-image">
                         <div class="movie-detail-info">
                             <h2>${movie.movie_title}</h2>
+                            <p><strong>영화 ID:</strong> ${movie.movie_id}</p>
                             <p><strong>개봉일:</strong> ${new Date(
                               movie.movie_release_date
                             ).toLocaleDateString()}</p>
